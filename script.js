@@ -10,14 +10,7 @@ const data = {
           'rgba(255, 165, 0, 1)',
           'rgba(255, 165, 0, 1)',
           'rgba(0, 0, 139, 1)',
-          'rgba(0, 0, 255, 1)',
-      //   'rgba(255, 26, 104, 0.2)',
-      //   'rgba(54, 162, 235, 0.2)',
-      //   'rgba(255, 206, 86, 0.2)',
-      //   'rgba(75, 192, 192, 0.2)',
-      //   'rgba(153, 102, 255, 0.2)',
-      //   'rgba(255, 159, 64, 0.2)',
-      //   'rgba(0, 0, 0, 0.2)'
+          'rgba(0, 0, 255, 1)'
       ],
       borderColor: [
       'rgba(255, 0, 0, 1)',
@@ -36,17 +29,35 @@ const data = {
     }]
   };
 
+const gaugeNeedle = {
+    id: 'gaugeNeedle',
+    afterDatasetsDraw(chart, args, plugins){
+      const {ctx, data} = chart;
+      ctx.save();
+
+      console.log(chart.geetDatasetMeta(0).data[0].x);
+      const xCenter = chart.geetDatasetMeta(0).data[0].x;
+      const yCenter = chart.geetDatasetMeta(0).data[0].y;
+      ctx.beginPath();
+      ctx.moveTo(xCenter, yCenter)
+      ctx.lineTo(xCenter, 100);
+      ctx.stroke();
+    }
+}
+
   // config 
   const config = {
     type: 'doughnut',
     data,
     options: {
+      aspectRatio:1.8,
       Plugins:{
           legend : {
               display: false
           }
       }
-    }
+    },
+    Plugins: [gaugeNeedle]
   };
 
   // render init block
@@ -57,4 +68,4 @@ const data = {
 
   // Instantly assign Chart.js version
   const chartVersion = document.getElementById('chartVersion');
-  chartVersion.innerText = Chart.version;
+  // chartVersion.innerText = Chart.version;
