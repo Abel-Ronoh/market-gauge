@@ -44,7 +44,7 @@ function updateTicker() {
         counterSell +=1
         sellCounter.textContent = counterSell
     }else if (currentData.value == "HOLD"){
-        tickerValue.style.color = "orange"
+        tickerValue.style.color = "#5C5C5C"
         counterHold +=1
         holdCounter.textContent = counterHold
     }else if (currentData.value === "BUY") {

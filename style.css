@@ -6,12 +6,24 @@
   body{
     background-color: black;
   }
+  nav{
+    color: white;
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+  }
+  nav div{
+    border: 1px solid rgb(0, 102, 255);
+    padding: 20px 10px 20px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
   .chartMenu p {
     padding: 10px;
     font-size: 20px;
   }
   .chartCard {
-    position: absolute;
+    /* position: absolute; */
     width: 100%;
     height: 100vh;
     /* background: black; */
@@ -89,6 +101,21 @@
   font-size: 40px;
 }
   @media (max-width:800px) {
+    nav{
+      color: white;
+      display: flex;
+      width: 90%;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    nav div{
+      border: 1px solid rgb(0, 102, 255);
+      padding: 5px 10px 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: small;
+      margin: 10px;
+    }
     .gauge-needle {
       width: 3px;
       height: 60%;
