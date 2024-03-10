@@ -1,11 +1,11 @@
 // setup 
 const data = {
-    labels: ['sell', 'hold', 'buy'],
+    labels: ['strong sell','sell', 'hold', 'hold', 'buy', 'strong buy'],
     datasets: [{
       label: 'sell' ,
       data: [10, 10, 10, 10, 10, 10],
       backgroundColor: [
-          'rgba(255, 0, 0, 1)',
+          'rgba(150, 0, 0, 1)',
           'rgba(255, 0, 0, 1)',
           'rgba(255, 165, 0, 1)',
           'rgba(255, 165, 0, 1)',
@@ -20,7 +20,7 @@ const data = {
           'rgba(0, 0, 139, 1)',
           'rgba(0, 0, 255, 1)',
       ],
-      borderWidth: 1,
+      borderWidth: 0,
       circumference: 180,
       rotation: 270,
       cutout: '95%',
@@ -35,9 +35,9 @@ const gaugeNeedle = {
       const {ctx, data} = chart;
       ctx.save();
 
-      console.log(chart.geetDatasetMeta(0).data[0].x);
-      const xCenter = chart.geetDatasetMeta(0).data[0].x;
-      const yCenter = chart.geetDatasetMeta(0).data[0].y;
+      console.log(chart.getDatasetMeta(0).data[0].x);
+      const xCenter = chart.getDatasetMeta(0).data[0].x;
+      const yCenter = chart.getDatasetMeta(0).data[0].y;
       ctx.beginPath();
       ctx.moveTo(xCenter, yCenter)
       ctx.lineTo(xCenter, 100);
@@ -51,9 +51,12 @@ const gaugeNeedle = {
     data,
     options: {
       aspectRatio:1.8,
-      Plugins:{
+      plugins:{
           legend : {
               display: false
+          },
+          tooltip:{
+            enabled: false,
           }
       }
     },
