@@ -5,6 +5,7 @@ const gaugeNeedles = document.getElementById("gauge-needle");
 
 // Simulated data array (replace with your actual data source)
 const datas = [
+    { symbol: "TSLA", value: "HOLD" },
     { symbol: "AAPL", value: "STRONG BUY" },
     { symbol: "TSLA", value: "HOLD" },
     { symbol: "AMZN", value: "SELL" }
@@ -14,7 +15,7 @@ let currentDataIndex = 0;
 
 function updateTicker() {
     const currentData = datas[currentDataIndex];
-    tickerText.textContent = `${currentData.symbol}`;
+    // tickerText.textContent = `${currentData.symbol}`;
     tickerValue.textContent = currentData.value;
 
     // Update gauge based on value
