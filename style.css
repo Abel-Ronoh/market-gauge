@@ -13,10 +13,14 @@
     justify-content: space-between;
   }
   nav div{
-    border: 1px solid rgb(0, 102, 255);
-    padding: 20px 10px 20px 10px;
+    /* border: 1px solid rgb(0, 102, 255); */
+    font-weight: 900;
+    padding: 10px 10px 10px 10px;
     border-radius: 5px;
     cursor: pointer;
+  }
+  nav div:hover{
+    border: 1px solid rgb(0, 102, 255);
   }
   .chartMenu p {
     padding: 10px;
@@ -109,7 +113,7 @@
       flex-wrap: wrap;
     }
     nav div{
-      border: 1px solid rgb(0, 102, 255);
+      /* border: 1px solid rgb(0, 102, 255); */
       padding: 5px 10px 5px 10px;
       border-radius: 5px;
       cursor: pointer;
