@@ -104,6 +104,49 @@
   color: red;
   font-size: 40px;
 }
+
+footer{
+  width: 100%;
+  display: flex;
+  color: aliceblue
+  
+}
+footer h1{
+  display: flex;
+  width: 50%;
+  text-align: right;
+  align-items: center;
+  justify-content: right;
+  margin-right: 50px;
+  font-size: 50px;
+}
+.treck{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 40%;
+}
+.treck div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  color: gray;
+}
+span{
+  color: gold;
+  font-size: larger;
+}
+.treck img{
+  width: 60px;
+  /* background-color: red; */
+  margin: 20px;
+}
+#trv{
+  width: 100px;
+}
+
   @media (max-width:800px) {
     nav{
       color: white;
