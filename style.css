@@ -6,6 +6,12 @@
   body{
     background-color: black;
   }
+  #logo{
+    width: 200px;
+    position: absolute;
+    top: 20px;
+    left: 100px;
+  }
   nav{
     color: white;
     display: flex;
