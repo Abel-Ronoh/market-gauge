@@ -5,17 +5,53 @@
   }
   body{
     background-color: black;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+  }
+  .track{
+    /* background-color: blueviolet; */
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40%;
+  }
+  .track div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    color: gray;
+  }
+  .track img{
+    width: 60px;
+    /* background-color: red; */
+    margin: 20px;
+  }
+  .track span{
+    color: gold;
+    font-size: larger;
+  }
+  .track h4{
+    font-size: 12px;
   }
   #logo{
     width: 200px;
     position: absolute;
     top: 20px;
-    left: 100px;
+    right: 0;
   }
   nav{
     color: white;
+    /* background-color: brown; */
     display: flex;
     width: 50%;
+    height: 5%;
+    margin-top: 10px;
     justify-content: space-between;
     margin-bottom: 20px;
   }
@@ -31,13 +67,14 @@
   }
   .chartMenu p {
     padding: 10px;
-    font-size: 20px;
+    font-size: 0px;
   }
   .chartCard {
-    margin-top:20px ;
-    /* position: absolute; */
+    position: relative;
     width: 100%;
-    height: 100vh;
+    height: 100%;
+    /* background-color: red; */
+    /* height: 100vh; */
     /* background: black; */
     display: flex;
     flex-direction: column;
@@ -46,19 +83,26 @@
   }
   .chartBox {
     position: relative;
-    width: 700px;
-    padding: 20px;
+    width: fit-content;
+    min-height: 40%;
+    /* padding: 20px; */
+    /* overflow: scroll; */
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     /* border: solid 3px rgba(54, 162, 235, 1); */
-    /* background: white; */
+    background: transparent;
+  }
+  .chartBox canvas{
+    width: 500px;
+    height: 500px;
+    background-color: transparent;
   }
 
   .gauge-needle {
     width: 7px;
-    height: 60%;
+    height: 80%;
     /* padding-top: ; */
     position: absolute;
     /* top: 10%; */
@@ -93,6 +137,7 @@
   display: flex;
   justify-content: center;
   text-align: center;
+  height: 5%;
   /* background-color: red; */
 }
 
@@ -100,6 +145,7 @@
   width: 60%;
   color: white;
   display: flex;
+  height: 10%;
   /* gap: 100px; */
   justify-content: space-between;
   margin-top: 50px;
@@ -115,6 +161,7 @@
 
 footer{
   width: 100%;
+  height: 10%;
   display: flex;
   color: aliceblue
   
@@ -142,7 +189,7 @@ footer h1{
   margin-bottom: 10px;
   color: gray;
 }
-span{
+.treck span{
   color: gold;
   font-size: larger;
 }
@@ -156,16 +203,57 @@ span{
 }
 
   @media (max-width:800px) {
+    .track{
+      position: absolute;
+      top: 0;
+      /* background-color: blueviolet; */
+      height: 10%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .track div{
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+      color: gray;
+    }
+    .track img{
+      width: 60px;
+      /* background-color: red; */
+      margin: 20px;
+    }
+    .track span{
+      color: gold;
+      font-size: larger;
+      display: none;
+    }
+    .track h4{
+      display: none;
+      font-size: 8px;
+      margin: 0;
+      /* background-color: antiquewhite; */
+    }
     nav{
+      /* position: absolute; */
+      top: 50px;
       color: white;
       display: flex;
       width: 90%;
       justify-content: space-between;
       flex-wrap: wrap;
     }
+    #logo{
+      width: 50px;
+      top: 12%;
+    }
     nav div{
       /* border: 1px solid rgb(0, 102, 255); */
-      padding: 5px 10px 5px 10px;
+      padding: 0px 0px 0px 0px;
       border-radius: 5px;
       cursor: pointer;
       font-size: small;
@@ -173,29 +261,32 @@ span{
     }
     .gauge-needle {
       width: 3px;
-      height: 60%;
+      height: 40%;
       /* padding-top: ; */
       position: absolute;
       /* top: 10%; */
       bottom: 12%;
       left: 50%;
       transform-origin: bottom;
-      background-color: white;
+      /* background-color: white; */
       transition: 0.5s;
       border-radius: 20px;
   }
     .chartBox {
-        width: 80%;
+        width: 100%;
         padding: 20px;
         border-radius: 20px;
+        min-height: 40%;
         /* border: solid 3px rgba(54, 162, 235, 1); */
         /* background: white; */
       }
       .counters{
+        height: 10%;
         display: flex;
+        /* background-color: aqua; */
         /* flex-direction: column; */
-        flex-wrap: wrap;
-        font-size: 10px;
+        /* flex-wrap: wrap; */
+        font-size: small;
         margin: 0;
         justify-content: center;
         align-items: center;
@@ -204,14 +295,52 @@ span{
       }
       .counters div{
         text-align: center;
-        margin: 20px;
+        margin: 2px;
       }
       .counters div h2{
         color: red;
         font-size: 20px;
       }
+      .counters h1{
+        font-size: 20px;
+      }
       #ticker-value{
         color: aliceblue;
         font-size: 20px;
+      }
+      footer{
+        position: absolute;
+        height: 15%;
+        width: 100%;
+        bottom: 0;
+        display: flex;
+        /* flex-wrap: wrap;  */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      footer .treck{
+        width: 100%;
+        /* background-color: black; */
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+      }
+      .treck img{
+        width: 30px;
+        /* background-color: red; */
+        margin: 0px;
+      }
+      #trv{
+        width: 70px;
+      }
+      footer h1{
+        font-size: 15px;
+        width: 100%;
+        justify-content: center;
+        margin: 0;
+      }
+      .treck h4{
+        font-size: 12px;
       }
   }
