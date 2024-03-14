@@ -23,7 +23,7 @@ const data = {
       borderWidth: 0,
       circumference: 180,
       rotation: 270,
-      cutout: '95%',
+      cutout: '96%',
       borderRadius: 4,
       
     }]
