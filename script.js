@@ -45,12 +45,25 @@ const gaugeNeedle = {
     }
 }
 
+const doughnutLabelsLine = {
+  id: 'doughnutLabelsLine',
+  afterDraw(chart, args, options){
+    const {ctx, chartArea:{top, left, bottom, right, width, height}} = chart;
+
+    console.log(chart)
+
+
+
+  }
+}
+
   // config 
   const config = {
     type: 'doughnut',
     data,
     options: {
       aspectRatio:1.8,
+      // maintainAspectRatio: false,
       plugins:{
           legend : {
               display: false
@@ -60,7 +73,7 @@ const gaugeNeedle = {
           }
       }
     },
-    Plugins: [gaugeNeedle]
+    Plugins: [doughnutLabelsLine]
   };
 
   // render init block
