@@ -79,7 +79,7 @@ const doughnutLabelsLine = {
         const { x, y } = datapoint.tooltipPosition();
         const xLine = x >= width / 2 ? x + 15 : x - 75;
         const yLine = y >= height / 2 ? y + 15 : y - 15;
-        ctx.font = '12px Arial black'; // Adjust font size as needed
+        ctx.font = '12px Arial '; // Adjust font size as needed
         ctx.fillText(chart.data.labels[index], xLine, yLine);
       });
     });
