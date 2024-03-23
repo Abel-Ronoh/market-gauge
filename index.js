@@ -64,7 +64,7 @@ function updateTicker() {
     clearInterval(strongBuyCounterInterval);
     counterSell++;
     sellCounter.textContent = counterSell;
-    if (!sellCounterInterval) {
+    if (sellCounterInterval) {
       sellCounterInterval = setInterval(() => {
         counterSell++;
         sellCounter.textContent = counterSell;
@@ -94,12 +94,12 @@ function updateTicker() {
     clearInterval(strongSellCounterInterval);
     clearInterval(strongBuyCounterInterval);
     counterBuy++;
-    buyCounter.textContent = counterBuy;
-    if (!buyCounterInterval) {
+    // buyCounter.textContent = counterBuy;
+    if (buyCounterInterval) {
       buyCounterInterval = setInterval(() => {
         counterBuy++;
         buyCounter.textContent = counterBuy;
-      }, 2000);
+      }, 1000);
     }
   } else if (currentData.value === "STRONG SELL") {
     tickerValue.style.color = "red";
