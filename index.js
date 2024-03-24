@@ -179,6 +179,6 @@ function updateTicker() {
   currentDataIndex = (currentDataIndex + 1) % datas.length; // Loop through data array
 }
 
-setInterval(updateTicker, 300000); // Update ticker every 10 seconds
+setInterval(updateTicker, 1800000); // Update ticker every 10 seconds
 
 updateTicker(); // Initial update
