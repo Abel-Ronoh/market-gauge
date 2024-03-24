@@ -88,8 +88,8 @@
   }
 
   .gauge-needle {
-    width: 7px;
-    height: 70%;
+    width: 3px;
+    height: 60%;
     /* padding-top: ; */
     position: absolute;
     /* top: 10%; */

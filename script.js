@@ -96,6 +96,7 @@ const doughnutLabelsLine = {
       cutoutPercentage: 40, // 60% of the canvas width
       plugins: {
         labels:{
+          render:data,
           precision:1,
         arc:true,
         },

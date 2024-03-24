@@ -10,10 +10,15 @@ var holdCounter = document.getElementById("holdCounter");
 
 // Simulated data array (replace with your actual data source)
 const datas = [
-  { symbol: "TSLA", value: "HOLD" },
-  { symbol: "AAPL", value: "STRONG BUY" },
-  { symbol: "TSLA", value: "HOLD" },
+  { symbol: "AMZN", value: "STRONG BUY" },
   { symbol: "AMZN", value: "SELL" },
+  { symbol: "AMZN", value: "BUY" },
+  { symbol: "AMZN", value: "STRONG SELL" },
+  // { symbol: "TSLA", value: "HOLD" },
+  { symbol: "AAPL", value: "STRONG BUY" },
+  // { symbol: "TSLA", value: "HOLD" },
+  { symbol: "AMZN", value: "SELL" },
+  { symbol: "AMZN", value: "BUY" },
   { symbol: "AMZN", value: "STRONG SELL" },
   { symbol: "AMZN", value: "BUY" },
 ];
@@ -51,8 +56,21 @@ function updateTicker() {
       buyCounterInterval = setInterval(() => {
         counterBuy++;
         buyCounter.textContent = counterBuy;
-      }, 1000);
+      }, 3000);
     }
+      if (!sellCounterInterval) {
+        sellCounterInterval = setInterval(() => {
+          counterSell++;
+          sellCounter.textContent = counterSell;
+        }, 10000);
+      }
+      if (!holdCounterInterval) {
+        holdCounterInterval = setInterval(() => {
+          counterHold++;
+          holdCounter.textContent = counterHold;
+        }, 7000);
+      }
+    
     buyCounterInterval.clearInterval
   } else if (currentData.value === "SELL") {
     tickerValue.style.color = "red";
@@ -68,24 +86,39 @@ function updateTicker() {
       sellCounterInterval = setInterval(() => {
         counterSell++;
         sellCounter.textContent = counterSell;
-      }, 2000);
+      }, 4000);
     }
-  } else if (currentData.value == "HOLD") {
-    tickerValue.style.color = "#5C5C5C";
-    timer = 3000;
-    clearInterval(sellCounterInterval);
-    clearInterval(buyCounterInterval);
-    clearInterval(strongSellCounterInterval);
-    clearInterval(strongBuyCounterInterval);
-    counterHold++;
-    holdCounter.textContent = counterHold;
-    if (!holdCounterInterval) {
+    if (holdCounterInterval) {
       holdCounterInterval = setInterval(() => {
         counterHold++;
         holdCounter.textContent = counterHold;
-      }, 3000);
+      }, 20000);
     }
-  } else if (currentData.value === "BUY") {
+    if (buyCounterInterval) {
+      buyCounterInterval = setInterval(() => {
+        counterBuy++;
+        buyCounter.textContent = counterBuy;
+      }, 8000);
+    }
+
+  } 
+  // else if (currentData.value == "HOLD") {
+  //   tickerValue.style.color = "#5C5C5C";
+  //   timer = 3000;
+  //   clearInterval(sellCounterInterval);
+  //   clearInterval(buyCounterInterval);
+  //   clearInterval(strongSellCounterInterval);
+  //   clearInterval(strongBuyCounterInterval);
+  //   counterHold++;
+  //   holdCounter.textContent = counterHold;
+  //   if (!holdCounterInterval) {
+  //     holdCounterInterval = setInterval(() => {
+  //       counterHold++;
+  //       holdCounter.textContent = counterHold;
+  //     }, 3000);
+  //   }
+  // }
+  else if (currentData.value === "BUY") {
     tickerValue.style.color = "blue";
     gaugeNeedles.classList.add("buy");
     timer = 150000;
@@ -99,7 +132,19 @@ function updateTicker() {
       buyCounterInterval = setInterval(() => {
         counterBuy++;
         buyCounter.textContent = counterBuy;
-      }, 1000);
+      }, 4000);
+    }
+    if (sellCounterInterval) {
+      sellCounterInterval = setInterval(() => {
+        counterSell++;
+        sellCounter.textContent = counterSell;
+      }, 11000);
+    }
+    if (holdCounterInterval) {
+      holdCounterInterval = setInterval(() => {
+        counterHold++;
+        holdCounter.textContent = counterHold;
+      }, 15000);
     }
   } else if (currentData.value === "STRONG SELL") {
     tickerValue.style.color = "red";
@@ -111,17 +156,29 @@ function updateTicker() {
     // clearInterval(strongBuyCounterInterval);
     counterSell++;
     sellCounter.textContent = counterSell;
-    if (!sellCounterInterval) {
+    if (sellCounterInterval) {
       sellCounterInterval = setInterval(() => {
         counterSell++;
         sellCounter.textContent = counterSell;
       }, 2000);
+    }
+    if (holdCounterInterval) {
+      holdCounterInterval = setInterval(() => {
+        counterHold++;
+        holdCounter.textContent = counterHold;
+      }, 15000);
+    }
+    if (buyCounterInterval) {
+      buyCounterInterval = setInterval(() => {
+        counterBuy++;
+        buyCounter.textContent = counterBuy;
+      }, 7000);
     }
   }
 
   currentDataIndex = (currentDataIndex + 1) % datas.length; // Loop through data array
 }
 
-setInterval(updateTicker, 10000); // Update ticker every 10 seconds
+setInterval(updateTicker, 300000); // Update ticker every 10 seconds
 
 updateTicker(); // Initial update
